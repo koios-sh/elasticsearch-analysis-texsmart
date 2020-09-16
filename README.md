@@ -1,2 +1,2 @@
-# TexSmartESPlugin
+# elasticsearch-analysis-texsmart
 基于腾讯TexSmart分词SDK的ES分词插件
