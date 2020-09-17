@@ -26,7 +26,7 @@ TexSmart Analyzer for ElasticSearch
 
 方式一
 
-   a. 下载对应的release安装包，最新release包可从baidu盘下载（链接:https://pan.baidu.com/s/1mFPNJXgiTPzZeqEjH_zifw  密码:i0o7）
+   a. 下载对应的release安装包，最新release包可从github下载（链接: https://github.com/koios-sh/elasticsearch-analysis-texsmart/releases/download/v7.6.2/elasticsearch-analysis-texsmart-7.6.2.zip）
    
    b. 执行如下命令安装，其中PATH为插件包绝对路径：
    
@@ -36,7 +36,7 @@ TexSmart Analyzer for ElasticSearch
 
    a. 使用elasticsearch插件脚本安装command如下：
    
-   `./bin/elasticsearch-plugin install https://github.com/github.com/koios-sh/elasticsearch-analysis-texsmart/releases/download/v7.6.2/elasticsearch-analysis-hanlp-7.6.2.zip`
+   `./bin/elasticsearch-plugin install https://github.com/koios-sh/elasticsearch-analysis-texsmart/releases/download/v7.6.2/elasticsearch-analysis-texsmart-7.6.2.zip`
 
 方式三
 
