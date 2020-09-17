@@ -1,0 +1,18 @@
+grant {
+  // texsmart data directories
+  permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+
+  // needed because of problems in unbound LDAP library
+  permission java.util.PropertyPermission "*", "read,write";
+
+  // classloader
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "accessClassInPackage.jdk.internal.loader";
+
+  // socket
+  permission java.net.SocketPermission "*", "connect,resolve";
+
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.lang.reflect.ReflectPermission "newProxyInPackage.tencent.ai.texsmart";
+};
