@@ -160,6 +160,8 @@ TexSmart在提供了各类分词方式的基础上，也提供了一系列的分
 | enable_index_mode                    | 是否是索引分词        |
 | enable_stop_dictionary               | 是否启用停用词        |
 | enable_offset                        | 是否计算偏移量        |
+| enable_pos_alg                       | 指定pos_tagging算法 (log_linear(默认), crf,dnn) |
+| enable_ner_alg                       | 指定ner算法 (crf(默认),dnn) |
 
 注意： 如果要采用如上配置过滤中英文标点符号，需要设置enable_stop_dictionary为true
 
@@ -177,7 +179,9 @@ PUT test
       "tokenizer": {
         "my_texsmart": {
           "type": "texsmart",
-          "enable_stop_dictionary": true
+          "enable_stop_dictionary": true,
+          "enable_pos_alg": "log_linear",
+          "enable_ner_alg": "crf"
         }
       }
     }
