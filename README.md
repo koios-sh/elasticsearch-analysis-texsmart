@@ -161,7 +161,7 @@ HanLP在提供了各类分词方式的基础上，也提供了一系列的分词
 | enable_stop_dictionary               | 是否启用停用词        |
 | enable_offset                        | 是否计算偏移量        |
 
-注意： 如果要采用如上配置配置自定义分词，需要设置enable_custom_config为true
+注意： 如果要采用如上配置过滤中英文标点符号，需要设置enable_stop_dictionary为true
 
 例如：
 ```text
