@@ -37,7 +37,9 @@ public class TokenizerBuilder {
         }
         segment.enableIndexMode(configuration.isEnableIndexMode())
             .enableOffset(configuration.isEnableOffset())
-            .enableStopDictionary(configuration.isEnableStopDictionary());
+            .enableStopDictionary(configuration.isEnableStopDictionary())
+            .setPosAlgType(configuration.getEnablePosAlg())
+            .setNerAlgType(configuration.getEnableNerAlg());
         return segment;
     }
 }

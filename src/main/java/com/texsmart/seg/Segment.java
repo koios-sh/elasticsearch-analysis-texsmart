@@ -1,5 +1,7 @@
 package com.texsmart.seg;
 
+import org.elasticsearch.index.analysis.NerAlgType;
+import org.elasticsearch.index.analysis.PosAlgType;
 import tencent.ai.texsmart.NluOutput.Term;
 
 import java.util.List;
@@ -37,6 +39,16 @@ public abstract class Segment {
 
     public Segment enableStopDictionary(boolean enable) {
         this.config.enableStopDictionary = enable;
+        return this;
+    }
+
+    public Segment setPosAlgType(PosAlgType posAlgType) {
+        this.config.posAlgType = posAlgType;
+        return this;
+    }
+
+    public Segment setNerAlgType(NerAlgType nerAlgType) {
+        this.config.nerAlgType = nerAlgType;
         return this;
     }
 }

@@ -1,6 +1,5 @@
 package com.texsmart.dic.stopword;
 
-import com.texsmart.dic.config.TexSmartConfig;
 import tencent.ai.texsmart.NluOutput.Term;
 
 public class FilterStopWord {

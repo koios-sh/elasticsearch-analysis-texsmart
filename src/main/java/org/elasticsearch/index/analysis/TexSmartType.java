@@ -18,9 +18,5 @@ public enum TexSmartType {
     /**
      * 中文单词分词
      */
-    SINGLE,
-    /**
-     * 英文分词
-     */
-    ENGLISH
+    SINGLE
 }

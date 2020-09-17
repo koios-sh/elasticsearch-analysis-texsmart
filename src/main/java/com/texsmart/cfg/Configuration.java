@@ -4,6 +4,8 @@ import com.texsmart.dic.Dictionary;
 import org.elasticsearch.common.inject.Inject;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
+import org.elasticsearch.index.analysis.NerAlgType;
+import org.elasticsearch.index.analysis.PosAlgType;
 
 /**
  * @project: elasticsearch-analysis-texsmart
@@ -33,6 +35,9 @@ public class Configuration {
 
     private boolean enableStopDictionary;
 
+    private PosAlgType enablePosAlg;
+    private NerAlgType enableNerAlg;
+
     @Inject
     public Configuration(Environment env, Settings settings) {
         this.environment = env;
@@ -45,6 +50,13 @@ public class Configuration {
         this.enableNormalization = settings.get("enable_normalization", "false").equals("true");
         this.enableOffset = settings.get("enable_offset", "true").equals("true");
         this.enableCustomConfig = settings.get("enable_custom_config", "false").equals("true");
+        try {
+            this.enablePosAlg = PosAlgType.valueOf(settings.get("enable_pos_alg", "log_linear"));
+            this.enableNerAlg = NerAlgType.valueOf(settings.get("enable_ner_alg", "crf"));
+        } catch (IllegalArgumentException e) {
+            this.enablePosAlg = PosAlgType.LOG_LINEAR;
+            this.enableNerAlg = NerAlgType.CRF;
+        }
         Dictionary.initial(this);
     }
 
@@ -120,6 +132,24 @@ public class Configuration {
 
     public Configuration enableCustomConfig(boolean enableCustomConfig) {
         this.enableCustomConfig = enableCustomConfig;
+        return this;
+    }
+
+    public PosAlgType getEnablePosAlg() {
+        return this.enablePosAlg;
+    }
+
+    public Configuration enablePosAlg(PosAlgType enablePosAlg) {
+        this.enablePosAlg = enablePosAlg;
+        return this;
+    }
+
+    public NerAlgType getEnableNerAlg() {
+        return this.enableNerAlg;
+    }
+
+    public Configuration enablePosAlg(NerAlgType enableNerAlg) {
+        this.enableNerAlg = enableNerAlg;
         return this;
     }
 }
