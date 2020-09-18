@@ -91,7 +91,7 @@ public class TexSmartTokenizer extends Tokenizer {
         positionAttr.setPositionIncrement(position);
         termAtt.setEmpty().append(term.str);
         offsetAtt.setOffset(correctOffset(term.offset), correctOffset(term.offset + term.str.length()));
-        typeAtt.setType(term.tag == null ? "null" : term.tag.toString());
+        typeAtt.setType(term.tag == null ? "null" : term.tag);
         totalOffset += term.length();
         return true;
     }

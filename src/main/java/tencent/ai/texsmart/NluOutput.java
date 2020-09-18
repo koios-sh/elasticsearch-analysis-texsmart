@@ -74,6 +74,7 @@ public class NluOutput {
 			newTerm.offset = CLib.INSTANCE.Nlu_TermOffset(termPtr);
 			newTerm.len = CLib.INSTANCE.Nlu_TermLen(termPtr);
 			newTerm.tag = getWideStr(CLib.INSTANCE.Nlu_TermTag(termPtr));
+			newTerm.tag = newTerm.tag.equals("") ? "NN" : newTerm.tag;
 			termList.add(newTerm);
 		}
 		return termList;
@@ -94,6 +95,7 @@ public class NluOutput {
 			newTerm.offset = CLib.INSTANCE.Nlu_TermOffset(termPtr);
 			newTerm.len = CLib.INSTANCE.Nlu_TermLen(termPtr);
 			newTerm.tag = getWideStr(CLib.INSTANCE.Nlu_TermTag(termPtr));
+			newTerm.tag = newTerm.tag.equals("") ? "NN" : newTerm.tag;
 			temrList.add(newTerm);
 		}
 		return temrList;
